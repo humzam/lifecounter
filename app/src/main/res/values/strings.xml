@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">LifeCounter</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="initial_total">20</string>
+    <string name="btn_txt_plus1">+</string>
+    <string name="btn_txt_minus1">-</string>
+    <string name="btn_txt_plus5">+5</string>
+    <string name="btn_txt_minus5">-5</string>
+</resources>
