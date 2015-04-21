@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -19,39 +20,44 @@ public class MainActivity extends ActionBarActivity {
 
     public static final String TAG = "MainActivity";
 
-//    Button p1p1;
-//    Button p1m1;
-//    Button p1p5;
-//    Button p1m5;
-//
-//    TextView p1_total;
+    private TextView p1_total;
+    private TextView p2_total;
+    private TextView p3_total;
+    private TextView p4_total;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
 
-//        p1_total = (TextView) findViewById(R.id.player1_total);
-//        p1p1 = (Button) findViewById(R.id.player1_btn_plus1);
-//        p1p1.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-////                 TextView total = (TextView) findViewById(R.id.player1_total);
-//                 int newTotal = Integer.parseInt(p1_total.getText().toString()) + 1;
-//                 p1_total.setText("" + newTotal);
-//            }
-//        });
-//        p1m1 = (Button) findViewById(R.id.player1_btn_minus1);
-//        p1p5 = (Button) findViewById(R.id.player1_btn_plus5);
-//        p1m5 = (Button) findViewById(R.id.player1_btn_minus1);
+        p1_total = (TextView) findViewById(R.id.player1_total);
+        p2_total = (TextView) findViewById(R.id.player2_total);
+        p3_total = (TextView) findViewById(R.id.player3_total);
+        p4_total = (TextView) findViewById(R.id.player4_total);
 
+        if (savedInstanceState != null) {
+            p1_total.setText("" + savedInstanceState.get("p1_total"));
+            p2_total.setText("" + savedInstanceState.get("p2_total"));
+            p3_total.setText("" + savedInstanceState.get("p3_total"));
+            p4_total.setText("" + savedInstanceState.get("p4_total"));
+        }
     }
 
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+        savedInstanceState.putInt("p1_total", Integer.parseInt(p1_total.getText().toString()));
+        savedInstanceState.putInt("p2_total", Integer.parseInt(p2_total.getText().toString()));
+        savedInstanceState.putInt("p3_total", Integer.parseInt(p3_total.getText().toString()));
+        savedInstanceState.putInt("p4_total", Integer.parseInt(p4_total.getText().toString()));
+
+        super.onSaveInstanceState(savedInstanceState);
+    }
+
+
     public void onClick(View v) {
-        TextView p1_total = (TextView) findViewById(R.id.player1_total);
-        TextView p2_total = (TextView) findViewById(R.id.player2_total);
-        TextView p3_total = (TextView) findViewById(R.id.player3_total);
-        TextView p4_total = (TextView) findViewById(R.id.player4_total);
+
         int p1_oldTotal = Integer.parseInt(p1_total.getText().toString());
         int p2_oldTotal = Integer.parseInt(p2_total.getText().toString());
         int p3_oldTotal = Integer.parseInt(p3_total.getText().toString());
