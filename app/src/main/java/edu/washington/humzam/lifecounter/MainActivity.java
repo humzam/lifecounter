@@ -50,8 +50,12 @@ public class MainActivity extends ActionBarActivity {
     public void onClick(View v) {
         TextView p1_total = (TextView) findViewById(R.id.player1_total);
         TextView p2_total = (TextView) findViewById(R.id.player2_total);
+        TextView p3_total = (TextView) findViewById(R.id.player3_total);
+        TextView p4_total = (TextView) findViewById(R.id.player4_total);
         int p1_oldTotal = Integer.parseInt(p1_total.getText().toString());
-        int p2_oldTotal = Integer.parseInt(p1_total.getText().toString());
+        int p2_oldTotal = Integer.parseInt(p2_total.getText().toString());
+        int p3_oldTotal = Integer.parseInt(p3_total.getText().toString());
+        int p4_oldTotal = Integer.parseInt(p4_total.getText().toString());
         int newTotal;
         if (v.getId() == R.id.player1_btn_plus1) {
             newTotal = p1_oldTotal + 1;
@@ -59,43 +63,65 @@ public class MainActivity extends ActionBarActivity {
         } else if (v.getId() == R.id.player1_btn_minus1) {
             newTotal = p1_oldTotal - 1;
             p1_total.setText("" + newTotal);
-            if (newTotal < 0) {
-                displayMessage(1);
-           }
+            checkTotal(1, newTotal);
         } else if (v.getId() == R.id.player1_btn_plus5) {
             newTotal = p1_oldTotal + 5;
             p1_total.setText("" + newTotal);
         } else if (v.getId() == R.id.player1_btn_minus5) {
             newTotal = p1_oldTotal - 5;
-            if (newTotal < 0) {
-                displayMessage(1);
-            }
+            checkTotal(1, newTotal);
             p1_total.setText("" + newTotal);
         } else if (v.getId() == R.id.player2_btn_plus1) {
-            newTotal = oldTotal + 1;
+            newTotal = p2_oldTotal + 1;
             p2_total.setText("" + newTotal);
         } else if (v.getId() == R.id.player2_btn_minus1) {
-            newTotal = oldTotal - 1;
+            newTotal = p2_oldTotal - 1;
             p2_total.setText("" + newTotal);
-            if (newTotal < 0) {
-                displayMessage(2);
-            }
+            checkTotal(2, newTotal);
         } else if (v.getId() == R.id.player2_btn_plus5) {
-            newTotal = oldTotal + 5;
+            newTotal = p2_oldTotal + 5;
             p2_total.setText("" + newTotal);
         } else if (v.getId() == R.id.player2_btn_minus5) {
-            newTotal = oldTotal - 5;
-            if (newTotal < 0) {
-                displayMessage(2);
-            }
+            newTotal = p2_oldTotal - 5;
+            checkTotal(2, newTotal);
             p2_total.setText("" + newTotal);
+        } else if (v.getId() == R.id.player3_btn_plus1) {
+            newTotal = p3_oldTotal + 1;
+            p3_total.setText("" + newTotal);
+        } else if (v.getId() == R.id.player3_btn_minus1) {
+            newTotal = p3_oldTotal - 1;
+            p3_total.setText("" + newTotal);
+            checkTotal(3, newTotal);
+        } else if (v.getId() == R.id.player3_btn_plus5) {
+            newTotal = p3_oldTotal + 5;
+            p3_total.setText("" + newTotal);
+        } else if (v.getId() == R.id.player3_btn_minus5) {
+            newTotal = p3_oldTotal - 5;
+            checkTotal(3, newTotal);
+            p3_total.setText("" + newTotal);
+        } else if (v.getId() == R.id.player4_btn_plus1) {
+            newTotal = p4_oldTotal + 1;
+            p4_total.setText("" + newTotal);
+        } else if (v.getId() == R.id.player4_btn_minus1) {
+            newTotal = p4_oldTotal - 1;
+            p4_total.setText("" + newTotal);
+            checkTotal(4, newTotal);
+        } else if (v.getId() == R.id.player4_btn_plus5) {
+            newTotal = p4_oldTotal + 5;
+            p4_total.setText("" + newTotal);
+        } else if (v.getId() == R.id.player4_btn_minus5) {
+            newTotal = p4_oldTotal - 5;
+            checkTotal(4, newTotal);
+            p4_total.setText("" + newTotal);
         }
     }
 
-    private void displayMessage(int player) {
-        CharSequence text = "Player " + player +  " LOSES!";
-        Toast toast = Toast.makeText(getApplicationContext(), text, Toast.LENGTH_SHORT);
-        toast.show();
+    private void checkTotal(int player, int total) {
+        if (total < 0) {
+            CharSequence text = "Player " + player +  " LOSES!";
+            Toast toast = Toast.makeText(getApplicationContext(), text, Toast.LENGTH_SHORT);
+            toast.show();
+        }
     }
 
 
