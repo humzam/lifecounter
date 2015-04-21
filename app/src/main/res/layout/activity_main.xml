@@ -12,6 +12,7 @@
         android:orientation="horizontal"
         android:layout_marginBottom="@dimen/activity_vertical_margin">
 
+
         <TextView android:text="@string/initial_total" android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="@dimen/activity_horizontal_margin"
@@ -23,31 +24,40 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/btn_txt_plus1"
-            android:id="@+id/player1_btn_plus1" />
+            android:id="@+id/player1_btn_plus1"
+            android:tag="player1_btn_plus1"
+            android:onClick="onClick"/>
 
         <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="wrap_content"
             android:text="@string/btn_txt_minus1"
             android:id="@+id/player1_btn_minus1"
-            android:layout_height="wrap_content" />
+            android:tag="player1_btn_minus1"
+            android:layout_height="wrap_content"
+            android:onClick="onClick"/>
 
         <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/btn_txt_plus5"
-            android:id="@+id/player1_btn_plus5" />
+            android:id="@+id/player1_btn_plus5"
+            android:tag="player1_btn_plus5"
+            android:onClick="onClick"/>
 
         <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/btn_txt_minus5"
-            android:id="@+id/player1_btn_minus5" />
+            android:id="@+id/player1_btn_minus5"
+            android:tag="player1_btn_minus5"
+            android:onClick="onClick"/>
 
 
     </LinearLayout>
+
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -73,25 +83,28 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/btn_txt_minus1"
-            android:id="@+id/player2_btn_minus1" />
+            android:id="@+id/player2_btn_minus1"
+            android:onClick="onClick"/>
 
         <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/btn_txt_plus5"
-            android:id="@+id/player2_btn_plus5" />
+            android:id="@+id/player2_btn_plus5"
+            android:onClick="onClick"/>
 
         <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/btn_txt_minus5"
-            android:id="@+id/player2_btn_minus5" />
+            android:id="@+id/player2_btn_minus5"
+            android:onClick="onClick"/>
 
     </LinearLayout>
 
-
+<!--
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -176,6 +189,6 @@
             android:id="@+id/player4_btn_minus5" />
 
     </LinearLayout>
-
+-->
 
 </LinearLayout>
